@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="style.css">
+    <title>Weather News</title>
+</head>
+<body>
+    <div class="weather-app-container">
+        <div class="input-container">
+            <input type="text" id="input-box" placeholder="Search City">
+            <button id="searchBtn"><i class="fas fa-search fa-2x"></i></button>
+        </div>
+    
+        <div id="weather">
+            <h2 id="city">Weather in Dhaka</h2>
+            <div id="temp">32°C</div>
+            <div class="desc-container">
+                <img src="http://openweathermap.org/img/wn/04n.png" alt="" id="icon">
+                <div id="desc">Cloudy</div>
+            </div>
+            <div id="humidity">humidity: 63%</div>
+            <div id="wind">Wind speed: 7.1 km/h </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
