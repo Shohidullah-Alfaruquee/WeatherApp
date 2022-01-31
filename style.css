@@ -46,9 +46,17 @@ body{
     display: flex;
     align-items: center;
 }
-
+.temp-container{
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 #temp{
     font-weight: 700;
     font-size: 2.5rem;
-    margin-top: 1.5rem;
+}
+#sunset{
+    font-size: 1.5rem;
+    font-weight: 600;
 }

@@ -8,17 +8,24 @@ let weather = {
             + this.apikey)
         .then((response)=>response.json())
         .then((data)=> this.displayWeather(data));
-        
     },
     displayWeather: function(data){
         const {name} = data;
         const { icon, description } = data.weather[0];
         const { temp, humidity } = data.main;
+        const { country, sunset } = data.sys;
         const { speed } = data.wind;
+        let date = new Date(sunset*1000);
+        let hours = date.getHours();
+        let minutes = "0" + date.getMinutes();
+        let seconds = "0" + date.getSeconds();
+        let sunsetTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 
-        document.getElementById("city").innerText = `Weather in ${name}`;
+        document.getElementById("city").innerHTML = `Weather in ${name}, `;
+        document.getElementById("country").innerText = country;       
         document.getElementById("temp").innerText = `${temp} °C`;
-        document.getElementById("desc").innerText = description[0].toUpperCase()+description.substring(1);
+        document.getElementById("sunset").innerText = `Sunset: ${sunsetTime}`
+        document.getElementById("desc").innerText = description[0].toUpperCase() + description.substring(1);
         document.getElementById("humidity").innerText = `Humidity: ${humidity} %`;
         document.getElementById("wind").innerText = `Wind speed: ${speed} km/h`;
         document.getElementById('icon').src = "http://openweathermap.org/img/wn/" + icon + ".png";
